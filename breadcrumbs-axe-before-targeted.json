@@ -1,0 +1,120 @@
+{
+  "testEngine": {
+    "name": "axe-core",
+    "version": "4.11.1"
+  },
+  "testRunner": {
+    "name": "axe"
+  },
+  "testEnvironment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+    "windowWidth": 1280,
+    "windowHeight": 960,
+    "orientationAngle": 0,
+    "orientationType": "landscape-primary"
+  },
+  "timestamp": "2026-10-23T07:39:12.873Z",
+  "url": "http://127.0.0.1:51871/",
+  "toolOptions": {
+    "runOnly": {
+      "type": "rule",
+      "values": [
+        "landmark-unique"
+      ]
+    },
+    "rules": {
+      "landmark-unique": {
+        "enabled": true
+      }
+    },
+    "reporter": "v1"
+  },
+  "inapplicable": [],
+  "passes": [
+    {
+      "id": "landmark-unique",
+      "impact": "moderate",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "description": "Ensure landmarks are unique",
+      "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "landmark-is-unique",
+              "data": {
+                "role": "main",
+                "accessibleText": null
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<main style=\"max-width:1000px;margin:48px auto;padding:24px\">",
+          "target": [
+            "main"
+          ]
+        }
+      ]
+    }
+  ],
+  "incomplete": [],
+  "violations": [
+    {
+      "id": "landmark-unique",
+      "impact": "moderate",
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ],
+      "description": "Ensure landmarks are unique",
+      "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI",
+      "nodes": [
+        {
+          "any": [
+            {
+              "id": "landmark-is-unique",
+              "data": {
+                "role": "navigation",
+                "accessibleText": "breadcrumb"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<nav aria-label=\"Breadcrumb\">",
+                  "target": [
+                    "#account > nav"
+                  ]
+                },
+                {
+                  "html": "<nav aria-label=\"Breadcrumb\">",
+                  "target": [
+                    "#help > nav"
+                  ]
+                }
+              ],
+              "impact": "moderate",
+              "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "moderate",
+          "html": "<nav aria-label=\"Breadcrumb\">",
+          "target": [
+            "#catalog > nav"
+          ],
+          "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+        }
+      ]
+    }
+  ]
+}
